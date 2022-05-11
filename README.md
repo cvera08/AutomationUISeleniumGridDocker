@@ -142,7 +142,8 @@ ___
 ## Visualize the tests in Selenium Grid (web):
 <br/>
 In your browser, http://localhost:4444/ui#, you can see as busy the browser you are running at this moment
-for example:
+for example:  
+
 ![alt text](https://i.ibb.co/dLhN4CJ/Selenium-Grid.png)
 
 ___
