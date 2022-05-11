@@ -47,7 +47,7 @@ cd AutomationUISeleniumGridDocker
 ---
 
 ## Quick start
-
+<br/>
 1. Start a Docker container with Firefox
 
 ```bash
@@ -59,15 +59,24 @@ docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-fire
 3. That's it!
 
 :point_up: When executing `docker run` for an image that contains a browser please use
-the flag `--shm-size=2g` to use the host's shared memory.
+the flag `--shm-size=2g` to use the host's shared memory.  
+
+//If your test execution fails or is taking too much time: try to stop the above container from Docker Desktop (UI) and run the above "docker run ... " command again
+
+//You can check that is working in three ways: opening the container details/logs, checking from http://localhost:4444/ui is busy or seeing your automation results
+
+//Remember to stop selenium/standalone-firefox:4.1.4-20220427 Container if you want to continue further!!
 
 ___
 
-#Full Project :point_down:
+# Full Project :point_down:
+<br/>
 
 ___
 
 ## Download Images and Run them as a Container:
+<br/>
+//Remember to stop selenium/standalone-firefox:4.1.4-20220427 container if you followed the previous instructions, you can do it from Docker Desktop UI or by command line: 'docker ps' will provide you the docker name then execute 'docker stop <containerName>'
 
 Run this:
 ```sh
@@ -98,6 +107,7 @@ you are ready to go! (run your tests is the last step)
 ___
 
 ## How to run the tests:
+<br/>
 If you have some IDE, like IntelliJ or Eclipse just:
 - import the pom.xml file as a maven project, 
 - download the mvn dependencies
@@ -115,7 +125,7 @@ if you face some failure, try this one:
 if it is still not working, try this:
 >mvn clean package -DskipTests=true -Dsuite=‘Testng.xml’  
 
-and to run the test/s:
+and run the test/s:
 > mvn clean package -Dsuite=‘Testng.xml’ -DPort=9001  
 
 > mvn clean package -Dsuite=‘Testng.xml’ -Dbrowser='chrome'  
@@ -125,6 +135,7 @@ and to run the test/s:
 ___
 
 ## Visualize the tests in Selenium Grid (web):
+<br/>
 In your browser, http://localhost:4444/ui#, you can see as busy the browser you are running at this moment
 for example:
 ![alt text](https://i.ibb.co/dLhN4CJ/Selenium-Grid.png)
@@ -132,6 +143,7 @@ for example:
 ___
 
 ## Visualize automation tests in real time:
+<br/>
 
 Users can connect to the server in two ways:
 
@@ -187,3 +199,6 @@ Then, you would use in your browser:
 If you get a prompt asking for a password, it is: `secret`.
 
 ___
+
+[comment]: <> (Original idea and Sources: https://github.com/SeleniumHQ/docker-selenium)
+
