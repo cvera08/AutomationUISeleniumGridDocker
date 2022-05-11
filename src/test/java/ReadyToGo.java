@@ -16,8 +16,8 @@ public class ReadyToGo {
     public void testApp() throws MalformedURLException, InterruptedException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setBrowserName(BrowserType.CHROME);
-        //cap.setBrowserName(BrowserType.FIREFOX);
+        //cap.setBrowserName(BrowserType.CHROME);
+        cap.setBrowserName(BrowserType.FIREFOX);
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 
         driver.get("http://www.google.com");
