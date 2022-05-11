@@ -1,10 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,7 +12,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters(value = {"browser"})
-    public void setupTest(String browser) throws MalformedURLException {
+    public void setupTest(@Optional("chrome") String browser) throws MalformedURLException {
         //Set DesiredCapabilities
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -23,7 +20,7 @@ public class BaseTest {
         capabilities.setCapability("browserName", browser);
 
         //Set the Hub url (Docker exposed hub URL)
-        driver.set(new RemoteWebDriver(new URL("http://localhost:4446/wd/hub"), capabilities));
+        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities));
     }
 
     public WebDriver getDriver() {
