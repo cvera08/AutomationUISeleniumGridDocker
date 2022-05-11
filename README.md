@@ -1,5 +1,8 @@
 # AutomationUISeleniumGridDocker
 This repository is intended to automate UI tests with multi-browser support using Selenium Grid and Docker
+<br/>
+<br/>
+
 
 ___
 
@@ -61,9 +64,9 @@ docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-fire
 :point_up: When executing `docker run` for an image that contains a browser please use
 the flag `--shm-size=2g` to use the host's shared memory.  
 
-//If your test execution fails or is taking too much time: try to stop the above container from Docker Desktop (UI) and run the above "docker run ... " command again
+//If your test execution fails or is taking too much time: try to stop the created container from Docker Desktop (UI) and run the above "docker run ... " command again
 
-//You can check that is working in three ways: opening the container details/logs, checking from http://localhost:4444/ui is busy or seeing your automation results
+//You can check that is working in three ways: opening the container details/logs, checking from http://localhost:4444/ui that firefox is busy, or seeing your automation results
 
 //Remember to stop selenium/standalone-firefox:4.1.4-20220427 Container if you want to continue further!!
 
@@ -77,6 +80,8 @@ ___
 ## Download Images and Run them as a Container:
 <br/>
 //Remember to stop selenium/standalone-firefox:4.1.4-20220427 container if you followed the previous instructions, you can do it from Docker Desktop UI or by command line: 'docker ps' will provide you the docker name then execute 'docker stop <containerName>'
+
+<br/>
 
 Run this:
 ```sh
